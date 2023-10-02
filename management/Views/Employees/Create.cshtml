@@ -1,4 +1,5 @@
-﻿@model management.Models.Employee
+﻿
+@model management.Models.Employee
 
 @{
     ViewData["Title"] = "Create";
@@ -34,5 +35,95 @@
 </div>
 
 @section Scripts {
-    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            firstName: '',
+            lastName: ''
+        }
+    });
+</script>
+
+<style>
+    /* Apply the styles you provided here */
+    body {
+        background-color: #333;
+        color: #fff;
+        padding: 20px;
+        margin: 0;
+    }
+
+    /* Style the page container */
+    #app {
+        text-align: center;
+        margin: 20px;
+        color: #fff;
+        padding: 20px;
+    }
+
+    /* Style the h1 element */
+    h1 {
+        font-size: 24px;
+        color: #fff;
+    }
+
+    /* Style the "Create New" link like a button */
+    a.asp-action {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-bottom: 10px;
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    /* Style the form */
+    form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+    }
+
+    /* Style form labels */
+    .control-label {
+        font-weight: bold;
+        color: #333;
+    }
+
+    /* Style input fields and validation messages */
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
+
+    .text-danger {
+        color: #dc3545;
+    }
+
+    /* Style the "Create" button */
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        cursor: pointer;
+    }
+
+    /* Style the "Back to List" link */
+    .back-link {
+        text-decoration: none;
+        color: #007bff;
+    }
+</style>
